@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kharisma Moda</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header-menu">
+    <img src="logito2.png" alt="Kharisma Moda" class="logo" />
+
+    <nav class="top-buttons">
+      <a href="catalogo.html" class="top-btn">Catálogo</a>
+    </nav>
+  </header>
+
+
+  <main class="container">
+
+    <section class="main-section">
+
+      <div class="producto-container">
+
+        <!-- CONTENEDOR DE LAS DOS TARJETAS -->
+        <div class="tarjetas-dobles">
+          <div class="producto-card">
+            <img src="ropita/ropa blanca adelante.png" alt="Producto 1">
+          </div>
+
+          <div class="producto-card">
+            <img src="ropita/ropa blanca flor adelante.png" alt="Producto 2">
+          </div>
+        </div>
+
+        <!-- TEXTO A LA DERECHA -->
+        <div class="producto-info">
+          <h2>Kharisma Moda</h2>
+          <p>
+            Bienvenido a Kharisma Moda, tu destino de confianza para ropa elegante y de alta calidad.
+            Explora nuestra colección exclusiva y encuentra las prendas perfectas para cada ocasión.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <section class="seccion-redes">
+      <div class="iconos-redes">
+
+        <a href="https://www.facebook.com/share/1AFj1STuHU/" target="_blank" class="icono">
+          <img src="iconos/fb.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/kharisma.moda/" target="_blank" class="icono">
+          <img src="iconos/ig.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@kharismamoda.pe" target="_blank" class="icono">
+          <img src="iconos/tt.png" alt="TikTok">
+        </a>
+
+        <a href="https://wa.me/925557300" target="_blank" class="icono">
+          <img src="whatsapp.png" alt="WhatsApp">
+        </a>
+
+      </div>
+    </section>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sliders = document.querySelectorAll(".slider");
+
+      const DISPLAY_MS = 3000;
+      const FADE_MS = 800;
+
+      sliders.forEach(slider => {
+        const images = slider.dataset.images.split(",").map(s => s.trim());
+        let index = 0;
+
+        slider.style.backgroundImage = `url(${images[index]})`;
+
+        setInterval(() => {
+          slider.classList.add("fade-out");
+          setTimeout(() => {
+            index = (index + 1) % images.length;
+            slider.style.backgroundImage = `url(${images[index]})`;
+            slider.classList.remove("fade-out");
+          }, FADE_MS);
+        }, DISPLAY_MS);
+      });
+    });
+
+  </script>
+  <script src="animacion.js"></script>
+</body>
+
+</html>

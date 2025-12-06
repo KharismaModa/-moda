@@ -1,0 +1,131 @@
+/* -----------------------------------------
+   BASE
+----------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #EFE6DE; /* Color sólido */
+  background-attachment: fixed;
+}
+
+/* -----------------------------------------
+   HEADER
+----------------------------------------- */
+.header-menu {
+  background: #D9ADAE; /* Color sólido */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  height: 120px;
+  object-fit: contain;
+}
+
+/* -----------------------------------------
+   GALERÍA
+----------------------------------------- */
+.galeria {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.item {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: 0.35s;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: reboteEntrada 0.9s ease-out forwards;
+}
+
+/* Animación cascada */
+.item:nth-child(n) {
+  animation-delay: calc(0.08s * var(--i));
+}
+
+@keyframes reboteEntrada {
+  0% { opacity: 0; transform: translateY(40px) scale(0.88); }
+  60% { opacity: 1; transform: translateY(-15px) scale(1.03); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+/* -----------------------------------------
+   IMG FLIP
+----------------------------------------- */
+.img-box {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #FFF5F6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .4s ease-in-out;
+}
+
+.back { opacity: 0; }
+.item:hover .back { opacity: 1; }
+.item:hover .front { opacity: 0; }
+
+/* -----------------------------------------
+   DESCRIPCIÓN
+----------------------------------------- */
+.descripcion {
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* -----------------------------------------
+   FOOTER
+----------------------------------------- */
+footer {
+  background: linear-gradient(to bottom, #ff8d8d, #ff9aa9);
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* -----------------------------------------
+   BOTÓN VOLVER
+----------------------------------------- */
+.btn-volver {
+  background: #C7999A;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.25s;
+  box-shadow: 0px 4px 10px rgba(102, 88, 93, 0.4);
+}
+
+.btn-volver:hover {
+  background: rgb(223, 167, 167);
+  transform: translateY(-3px);
+}

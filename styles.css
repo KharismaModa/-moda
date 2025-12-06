@@ -1,0 +1,677 @@
+/* -----------------------------------------
+   BASE
+----------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #EFE6DE; /* Color sólido nuevo */
+}
+
+
+/* -----------------------------------------
+   HEADER
+----------------------------------------- */
+.header-menu {
+  background: #D9ADAE; /* Color sólido nuevo */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+  height: 120px;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.top-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  background: #ff4f4f;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.top-btn:hover {
+  background: #fc3636;
+  transform: scale(1.08);
+}
+
+/* -----------------------------------------
+   CONTENEDOR PRINCIPAL
+----------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* -----------------------------------------
+   CARDS
+----------------------------------------- */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* -----------------------------------------
+   SLIDER DE IMÁGENES
+----------------------------------------- */
+.slider {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slider.fade-out {
+  opacity: 0;
+}
+
+/* -----------------------------------------
+   FOOTER
+----------------------------------------- */
+footer {
+  background: #D9ADAE; /* Igual que el header para armonía */
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+}
+
+
+.iconos-redes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.icono img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.icono img:hover {
+  transform: scale(1.17);
+}
+
+/* -----------------------------------------
+   BOTÓN WHATSAPP
+----------------------------------------- */
+.wasap-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.wasap-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* -----------------------------------------
+   RESPONSIVE TABLET
+----------------------------------------- */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .logo {
+    height: 150px;
+  }
+
+  .slider {
+    height: 420px;
+  }
+}
+
+/* -----------------------------------------
+   RESPONSIVE MONITOR
+----------------------------------------- */
+@media (min-width: 1024px) {
+  .logo {
+    height: 180px;
+  }
+
+  .slider {
+    height: 500px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* CONTENEDOR DE TARJETA + TEXTO A LA DERECHA */
+.item-contenedor {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+/* TARJETA (ya la tienes) */
+.card {
+  flex: 1;
+  max-width: 420px;
+  /* controla ancho de la tarjeta */
+}
+
+/* TEXTO A LA DERECHA */
+.texto-lateral {
+  flex: 1;
+  padding: 10px;
+}
+
+/* TITULO */
+.texto-lateral h2 {
+  margin-top: 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* TEXTO */
+.texto-lateral p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* RESPONSIVE: en móvil se pone una debajo de la otra */
+@media (max-width: 768px) {
+  .item-contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+/* Contenedor general */
+.producto-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  /* Espacio entre tarjeta y texto */
+  margin: 20px 0;
+}
+
+/* Tarjeta del producto */
+.producto-card {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.producto-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Texto a la derecha */
+.producto-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* RESPONSIVE — para móvil */
+@media (max-width: 768px) {
+  .producto-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .producto-info {
+    max-width: 100%;
+    margin-top: 15px;
+    text-align: left;
+    /* Si prefieres texto centrado, cambia a center */
+  }
+}
+
+/* Texto a la derecha (estilo elegante) */
+.producto-info {
+  flex: 1;
+  max-width: 500px;
+  color: white;
+  /* TEXTO BLANCO */
+  font-family: "Georgia", serif;
+  /* Fuente elegante */
+}
+
+/* Título */
+.producto-info h2 {
+  font-size: 32px;
+  font-family: "Playfair Display", serif;
+  /* Mucho más fino */
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Párrafo */
+.producto-info p {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Georgia", serif;
+  opacity: 0.95;
+  /* Ligero toque elegante */
+}
+
+/* Contiene las dos tarjetas juntas */
+.tarjetas-dobles {
+  display: flex;
+  gap: 20px;
+}
+
+/* Ajustamos las tarjetas para que encajen bien */
+.tarjetas-dobles .producto-card {
+  width: 250px;
+  /* puedes aumentar o reducir */
+  flex-shrink: 0;
+}
+
+/* -------- FORMULARIO ESTILO KHARISMA -------- */
+.formulario-section {
+  background: #e5c5c5;
+  /* tono pastel del sitio */
+  padding: 35px 25px;
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: white;
+}
+
+.formulario-section h2 {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+.formulario {
+  max-width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels elegantes */
+.formulario label {
+  font-size: 18px;
+  font-family: "Georgia", serif;
+  text-align: left;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Campos */
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #ffffffcc;
+  font-size: 17px;
+  font-family: "Georgia", serif;
+  transition: 0.3s;
+}
+
+/* Enfocar campo */
+.formulario input:focus,
+.formulario textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transform: scale(1.02);
+}
+
+.formulario textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Botón elegante */
+.formulario button {
+  background: #fc574b;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.formulario button:hover {
+  background: #f368a0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formulario-section {
+    padding: 25px 15px;
+  }
+
+  .formulario-section h2 {
+    font-size: 26px;
+  }
+}
+
+/* -------- FORMULARIO ESTILO KHARISMA -------- */
+.formulario-section {
+  background: #e5c5c5;
+  padding: 40px 25px;
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.formulario-section h2 {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+.formulario {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels elegantes */
+.formulario label {
+  font-size: 18px;
+  font-family: "Georgia", serif;
+  text-align: left;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Inputs 100% responsivos */
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #ffffffcc;
+  font-size: 17px;
+  font-family: "Georgia", serif;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+/* Enfocar campo */
+.formulario input:focus,
+.formulario textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transform: scale(1.02);
+}
+
+.formulario textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Botón elegante */
+.formulario button {
+  background: #fc574b;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+/* Hover */
+.formulario button:hover {
+  background: #f368a0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+  .formulario-section {
+    padding: 25px 15px;
+    margin-top: 30px;
+  }
+
+  .formulario-section h2 {
+    font-size: 26px;
+  }
+
+  .formulario {
+    max-width: 100%;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-section {
+    padding: 20px 12px;
+  }
+
+  .formulario-section h2 {
+    font-size: 22px;
+  }
+
+  .formulario button {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
+
+.formulario-section {
+  background: #e5c5c5;
+  padding: 60px 25px;
+  /* más espacio interno */
+  border-radius: 15px;
+  margin: 60px auto;
+  /* centra el bloque en la página */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: white;
+  width: 90%;
+  /* % flexible */
+  max-width: 650px;
+  /* más centrado y elegante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .mapa-section {
+    padding: 25px 15px;
+  }
+
+  .mapa-section h2 {
+    font-size: 26px;
+  }
+
+  .mapa-contenedor {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapa-contenedor {
+    height: 260px;
+  }
+}
+
+/* CONTENEDOR RESPONSIVE */
+.mapa-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;       /* el mapa nunca se verá aplastado */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* IFRAME PERFECTAMENTE AJUSTADO */
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* Centrado perfecto en CELULAR */
+@media (max-width: 480px) {
+  .formulario-section {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 35px 18px; /* menos padding, más centrado */
+  }
+
+  .formulario {
+    max-width: 95%;  /* se centra mejor dentro del contenedor */
+  }
+}
+/* Animación suave de rebote al cargar */
+.producto-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: reboteEntrada 0.9s ease-out forwards;
+}
+
+/* Entrada tipo cascada */
+.producto-card:nth-child(1) { animation-delay: 0.1s; }
+.producto-card:nth-child(2) { animation-delay: 0.25s; }
+
+/* Si más adelante agregas más tarjetas */
+.producto-card:nth-child(3) { animation-delay: 0.40s; }
+.producto-card:nth-child(4) { animation-delay: 0.55s; }
+
+/* Keyframes del rebote */
+@keyframes reboteEntrada {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.88);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.flor-blanca {
+  position: fixed;
+  background-image: url('iconos/flor-blanca.png'); /* Cambia por tu flor */
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+  z-index: 999; /* Para que estén encima de todo */
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+}
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.btn-volver {
+  background: #e91e63;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s;
+  box-shadow: 0px 4px 10px rgba(233, 30, 99, 0.4);
+  margin-left: auto; /* Empuja hacia la derecha */
+}
+
+.btn-volver:hover {
+  background: #c2185b;
+  transform: translateY(-3px);
+}
